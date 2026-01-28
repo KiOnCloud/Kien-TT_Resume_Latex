@@ -1,0 +1,197 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{microtype}
+% Page setup
+\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Colors
+\definecolor{darkblue}{RGB}{0,51,102}
+\definecolor{lightgray}{RGB}{240,240,240}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=darkblue,
+    citecolor=darkblue
+}
+
+% Section formatting
+\titleformat{\section}
+{\Large\bfseries\uppercase}
+{}
+{0em}
+{}[\titlerule]
+
+\titlespacing{\section}{0pt}{10pt}{5pt}
+
+% Custom commands
+\newcommand{\cvitem}[2]{
+    \textbf{#1:} #2
+}
+
+\newcommand{\experienceitem}[4]{
+    \textbf{#1} \hfill \textit{#2}\\
+    \textit{#3} \hfill #4
+}
+
+\begin{document}
+
+% Header with photo and name in same row
+\begin{minipage}[c]{0.18\textwidth}
+    \centering
+    % Profile photo and birthday grouped
+    \begin{tikzpicture}
+        \clip (0,0) circle (1.5cm);
+        \node[anchor=center] at (0,0) {\includegraphics[width=3cm]{avatar.jpg}};
+    \end{tikzpicture}
+    
+    \vspace{0.3cm}
+    
+    \small\textbf{14 - Dec - 2001}
+\end{minipage}%
+\hspace{0.5cm}
+\begin{minipage}[c]{0.78\textwidth}
+    \begin{center}
+        {\Huge\bfseries THAI TRUNG KIEN}\\[0.2cm]
+        {\Large\bfseries FULL-STACK DEVELOPER}
+    \end{center}
+    
+    \vspace{0.3cm}
+    
+    % Contact information in table format
+    \begin{tabular}{@{}p{0.03\textwidth}p{0.43\textwidth}p{0.03\textwidth}p{0.43\textwidth}@{}}
+        \faMapMarker* & Ho Chi Minh city & \faEnvelope & trungkien1412.dev@gmail.com\\
+        & (Possible to relocate) & & \\[0.1cm]
+        \faPhone* & 0339950392& \faGlobe & \href{https://www.linkedin.com/in/trungkiendev/}{linkedin.com/in/trungkiendev/}\\
+    \end{tabular}
+\end{minipage}
+
+\vspace{0.5cm}
+
+% Two column layout for About Me and Education
+\begin{minipage}[t]{0.57\textwidth}
+    \section*{About Me}
+Full-stack Developer with 3+ years of experience building web applications end-to-end. Proficient in modern frameworks, system design, and cloud deployment. Seeking a Mid-level Full-stack Developer role to deliver quality solutions and drive technical growth.
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.40\textwidth}
+    \section*{Education}
+    \textbf{Bachelor of Information Technology}\\
+    Ho Chi Minh City University of Technology\\
+    \textit{(2017-22)}\\[0.2cm]
+    \textbullet\ \textbf{Certificate:} SAA-C03, DVA-C02 \\
+    \textbullet\ \textbf{Languages:} Vietnamese, English
+\end{minipage}
+
+\vspace{0.3cm}
+
+\section*{Key Skills}
+
+\begin{multicols}{3}
+\begin{itemize}[leftmargin=*,itemsep=0pt]
+    \item \textbf{Programming:} Python (proficient), SQL (proficient), Java, C++.
+    \item \textbf{Database:} MSSQL, MySQL, Postgre, MongoDB.
+    \item \textbf{Cloud Engineering:} Azure (Synapse, Factory, Storage), AWS (EC2, S3, RDS), GCP (Big Query, Storage).
+    \item \textbf{Data ingestion:} Azure Data Factory (proficient), Azure DataBrick, Python, Nifi, PySpark, Kafka, Airbyte.
+    \item \textbf{Data Modeling/ Data Warehouse/ Data Lake House:} Star/ Snowflake Schema, DBT (Data Build Tool).
+    \item \textbf{Orchestration \& Scheduling:} Airflow.
+    \item \textbf{Crawler:} Selenium, Scrapy.
+    \item \textbf{Others:} Pandas, Celery, Git, Linux, Selenium, Tor proxy, FastAPI, Flask, Neptune, Neo4j.
+    \item \textbf{Professional communication} - Understand both \textbf{business} and \textbf{technical} concepts.
+\end{itemize}
+\end{multicols}
+
+\section*{Experience}
+
+\experienceitem{VNG - ZaloPay}{(\textasciitilde8 mos) Sep 2024 - Now}{Data Engineer - Payment Data Platform Dept}{}
+
+\textbf{Data Ingestion, Data Pipeline} (Nifi, Airflow, Pyspark, Python, Hadoop, S3)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Designed and implemented scalable data ingestion pipelines, integrating data from multiple structured and unstructured sources into a data lake (AWS S3, Hadoop).
+\end{itemize}
+
+\textbf{Data Warehousing/ Data Lakehouse} (AWS S3, Hadoop, AWS Redshift, Pyspark, Airflow, Delta Lake)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Designed, developed data models to support analytics reporting, ensuring scalability and cost efficiency.
+    \item Collaborated with stakeholders to define data requirements, ensuring compliance with governance, security.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\experienceitem{HEINEKEN VIET NAM}{(2 yr 1 mos) Sep 2022 - Sep 2024}{Mid-level Data Engineer - Digital \& Technology Dept - Data Management Team}{}
+
+\textbf{Data Ingestion, Data Pipeline} (Azure Data Factory, Azure Synapse Analytics, Azure Data Brick, Python)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Developed and maintained data pipeline to centralize multiples sources into central repository that stored over 20 sources of data, enabling data-driven decision making for key business initiatives.
+\end{itemize}
+
+\textbf{Data Modeling} (Azure Data Brick, Synapse Dedicated Pool, SQL, Synapse Pipeline, Store Procedure, Star Schema)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Designed and implemented efficient data models to support reporting needs, ensuring optimal performance.
+    \item Collaborated with stakeholders to define data requirements and ensure data compliance standards.
+\end{itemize}
+
+\textbf{Data Quality- Accuracy - Availability} (Data Freshness, Data Uniqueness, Data Completeness)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Developed log, alert, monitoring dashboard that improved data quality, accuracy and availability which identified and resolved issues before they impacted business operations.
+\end{itemize}
+
+\textbf{Cost Optimization} by Resource Rightsizing (-12,5\% saving) (Deep understanding cloud pricing model)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Implemented automated cost management
+    \item Implemented service workload management which help ETL pipeline more efficiency.
+\end{itemize}
+
+\textbf{Collaboration}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Led a cross-functional team to establish data management policies and best practices, resulting in improved data security and compliance. Led a team of 2 interns, code review, shared knowledge and mentored intern resources.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\experienceitem{SIEU VIET GROUP - Công ty Cổ phần Nguồn Nhân Lực Siêu Việt}{(1 yr 4 mos) Jun 2021 - Sep 2022}{Data Engineer - Technology Dept - Data Team}{}
+
+\textbf{Data Platform Migration, Data Enrichment} (Big Query, DBT, Git, Airflow, Airbyte, Python)
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Successfully migrated from legacy databases to new Data Platform with dynamic ETL, data lineage, data modeling.
+    \item Centralized Sales, Marketing, ERP, ... sources (RDB, Crawling, API, Files, Storage,..) into a single central data repository.
+\end{itemize}
+
+\textbf{DWH Operation and Quality Control}
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Developed EDA Process, Unit Tests and Alert System to control Data Quality
+    \item Optimize Big Query cost with Partition + Clustering + incremental in DBT
+\end{itemize}
+
+\vspace{0.3cm}
+
+\experienceitem{HPT VIET NAM CORPORATION}{(3 mos) Apr 2021 - Jun 2021}{Intern Data Engineer - Data Department}{}
+
+\vspace{0.3cm}
+
+\section*{Highlight Activities}
+
+\begin{itemize}[leftmargin=*,itemsep=2pt]
+    \item Lecturer at CodeGym (1 yr 6 mos - Apr 2022 to Dec 2023)
+    \item Won the Lifelong Learner prizes at D\&T HEINEKEN Viet Nam 2023
+    \item Security Challenge 2024 Achivement at VNG- ZaloPay
+\end{itemize}
+
+\end{document}
